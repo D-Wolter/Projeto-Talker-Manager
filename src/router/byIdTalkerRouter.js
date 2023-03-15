@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const path = require('path');
-const { fsReadDB } = require('../middlewares');
+const fsReadDB = require('../middlewares/fsRead');
 
 const dataJsonPath = path.resolve(__dirname, '../talker.json');
 
