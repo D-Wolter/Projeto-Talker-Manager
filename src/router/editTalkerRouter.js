@@ -7,6 +7,7 @@ const { verifyName } = require('../middlewares/verifyName');
 const { verifyTalk } = require('../middlewares/verifyTalk');
 const { verifyRate } = require('../middlewares/verifyRate');
 const { editTalker } = require('../middlewares/editTalker');
+const fsReadDB = require('../middlewares/fsRead');
 // const { readFile } = require('../utils/readFile');
 
 const editTalkerRouter = Router();
@@ -18,14 +19,22 @@ verifyToken, verifyAge, verifyName, verifyTalk,
 verifyRate,
 async (req, res) => {
   const reqID = req.params.id;
-  const talker = await fs.readFile(JSON_PATH);
+  
+  const talker = await fsReadDB(JSON_PATH);
   const findTalkerId = talker.find(({ id }) => id === Number(reqID));
-  if (!findTalkerId) {
+  
+
+  
+  if (findTalkerId === undefined) {
     return res.status(404).json(NOT_FOUND);
   }
+  const talkerId = { id } = findTalkerId.id
   const { name, age, talk } = req.body;
-  const talkerEdited = await editTalker(name, age, talk, findTalkerId);
-  res.status(200).json(talkerEdited);
+  const createnew = {  name, age, id: talkerId, talk };
+  
+  await editTalker(talkerId, createnew);
+  console.log(createnew);
+  res.status(200).json(createnew);
 });
 
 module.exports = {
