@@ -16,6 +16,7 @@ const verifyToken = (req, res, next) => {
     }
     next();
 };
+//cmetario
 
   module.exports = { 
     verifyToken,
