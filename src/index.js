@@ -4,6 +4,7 @@ const { getByIdTalkerRouter } = require('./router/getByIdTalkerRouter');
 const { editTalkerRouter } = require('./router/editTalkerRouter');
 const { loginTalkerRouter } = require('./router/loginTalkerRouter');
 const { newTalkerRouter } = require('./router/newTalkerRouter');
+const { deleteTalkerRouter } = require('./router/deleteTalkerRouter');
 
 const app = express();
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use('/talker', getByIdTalkerRouter);
 app.use('/login', loginTalkerRouter);
 app.use('/talker', newTalkerRouter);
 app.use('/talker', editTalkerRouter);
+app.use('/talker', deleteTalkerRouter);
 
 app.listen(PORT, () => {
   console.log('Online');
