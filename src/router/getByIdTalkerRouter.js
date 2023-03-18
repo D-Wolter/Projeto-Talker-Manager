@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { readFile } = require('../utils/readFile');
+const util = require('../utils/index');
 
 const getByIdTalkerRouter = Router();
 
@@ -9,7 +9,7 @@ const NOT_FOUND_MSG = { message: 'Pessoa palestrante não encontrada' };
 
 getByIdTalkerRouter.get('/:id', async (req, res) => {
     const { id } = req.params;
-    const talkers = await readFile();
+    const talkers = await util.readFile();
     const talkerId = talkers.find((talker) => talker.id === +id);
   
     if (!talkerId) {

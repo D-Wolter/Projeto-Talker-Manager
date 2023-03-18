@@ -25,4 +25,6 @@ const checkLoginValid = (req, res, next) => {
   next();
 };
 
-module.exports = checkLoginValid;
+module.exports = { 
+  checkLoginValid,
+};

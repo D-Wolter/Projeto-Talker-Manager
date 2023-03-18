@@ -1,14 +1,14 @@
 const { Router } = require('express');
-const { deleteTalker } = require('../utils/deleteTalker');
-const { verifyToken } = require('../middlewares/verifyToken');
+const util = require('../utils/index');
+const mid = require('../middlewares/index');
 
 const HTTP_NO_CONTENT_STATUS = 204;
 
 const deleteTalkerRouter = Router();
 
-deleteTalkerRouter.delete('/:id', verifyToken, async (req, res) => {
+deleteTalkerRouter.delete('/:id', mid.verifyToken, async (req, res) => {
     const { id } = req.params;
-    await deleteTalker(Number(id));
+    await util.deleteTalker(Number(id));
     res.status(HTTP_NO_CONTENT_STATUS).end();
   });
 

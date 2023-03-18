@@ -7,4 +7,6 @@ const generateToken = () => {
   return token;
 };
 
-module.exports = generateToken;
+module.exports = { 
+  generateToken,
+};
