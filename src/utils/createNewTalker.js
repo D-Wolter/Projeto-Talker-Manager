@@ -3,7 +3,7 @@ const path = require('path');
 
 const JSON_PATH = '../talker.json';
 
-async function createNewTalker(newUser) {
+const createNewTalker = async (newUser) => {
     const data = await fs.readFile(path.resolve(__dirname, JSON_PATH), 'utf-8');
     const talkers = JSON.parse(data);
     
@@ -11,7 +11,7 @@ async function createNewTalker(newUser) {
     talkers.push(newTalker);
     await fs.writeFile(path.resolve(__dirname, JSON_PATH), JSON.stringify(talkers, null, 2));
     return newTalker;
-  }
+  };
 
   module.exports = {
     createNewTalker,

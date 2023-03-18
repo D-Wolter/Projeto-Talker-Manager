@@ -1,6 +1,6 @@
 const { readFile } = require('./readFile');
 
-async function searchTalker(q, rate, date) {
+const searchTalker = async (q, rate, date) => {
     let talkers = await readFile();
    
    try {
@@ -18,7 +18,7 @@ async function searchTalker(q, rate, date) {
    } catch (error) {
      console.log(error);
    }
- }
+ };
 
  module.exports = {
     searchTalker,
