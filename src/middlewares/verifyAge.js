@@ -1,8 +1,8 @@
-const verifyAge = (req, res, next) => {
-    const NOT_FOUND = { message: 'O campo "age" é obrigatório' };
-    const MIN_CHAR = { message: 'O campo "age" deve ser um número inteiro igual ou maior que 18' };
-    const HTTP_BAD_REQUEST_STATUS = 400;
+const NOT_FOUND = { message: 'O campo "age" é obrigatório' };
+const MIN_CHAR = { message: 'O campo "age" deve ser um número inteiro igual ou maior que 18' };
+const HTTP_BAD_REQUEST_STATUS = 400;
 
+const verifyAge = (req, res, next) => {
     const { age } = req.body;
     
     if (!age) {

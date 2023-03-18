@@ -5,6 +5,7 @@ const { editTalkerRouter } = require('./router/editTalkerRouter');
 const { loginTalkerRouter } = require('./router/loginTalkerRouter');
 const { newTalkerRouter } = require('./router/newTalkerRouter');
 const { deleteTalkerRouter } = require('./router/deleteTalkerRouter');
+const { searchTalkerRouter } = require('./router/searchTalkerRouter');
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
+app.use('/talker/search', searchTalkerRouter);
 app.use('/talker', getTalkerRouter);
 app.use('/talker', getByIdTalkerRouter);
 app.use('/login', loginTalkerRouter);

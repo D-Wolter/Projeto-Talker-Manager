@@ -1,10 +1,8 @@
-const verifyRate = (req, res, next) => {
-    const NOT_FOUND = { message: 'O campo "rate" é obrigatório' };
-    const NOT_VALID_NUMBER = {
-      message: 'O campo "rate" deve ser um número inteiro entre 1 e 5',
-    };
-    const HTTP_BAD_REQUEST_STATUS = 400;
+const NOT_FOUND = { message: 'O campo "rate" é obrigatório' };
+const NOT_VALID_NUMBER = { message: 'O campo "rate" deve ser um número inteiro entre 1 e 5' };
+const HTTP_BAD_REQUEST_STATUS = 400;
 
+const verifyRate = (req, res, next) => {
     const { talk } = req.body;
 
     if (talk.rate === undefined) {

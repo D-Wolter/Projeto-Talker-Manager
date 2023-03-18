@@ -1,11 +1,11 @@
 const { Router } = require('express');
 const { readFile } = require('../utils/readFile');
 
+const getByIdTalkerRouter = Router();
+
 const HTTP_OK_STATUS = 200;
 const HTTP_NOT_FOUND_STATUS = 404;
 const NOT_FOUND_MSG = { message: 'Pessoa palestrante não encontrada' };
-
-const getByIdTalkerRouter = Router();
 
 getByIdTalkerRouter.get('/:id', async (req, res) => {
     const { id } = req.params;

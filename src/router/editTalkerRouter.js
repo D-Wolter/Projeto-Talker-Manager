@@ -13,7 +13,10 @@ const HTTP_OK_STATUS = 200;
 const HTTP_NOT_FOUND_STATUS = 404;
 
 editTalkerRouter.put('/:id', 
-verifyToken, verifyAge, verifyName, verifyTalk, 
+verifyToken,
+verifyAge,
+verifyName,
+verifyTalk, 
 verifyRate,
 async (req, res) => {
   const reqID = req.params.id;

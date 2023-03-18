@@ -1,8 +1,8 @@
+const NOT_FOUND = { message: 'O campo "name" é obrigatório' };
+const NOT_HAVE_MIN_CHAR = { message: 'O "name" deve ter pelo menos 3 caracteres' };
+const HTTP_BAD_REQUEST_STATUS = 400;
+
 const verifyName = (req, res, next) => {
-    const NOT_FOUND = { message: 'O campo "name" é obrigatório' };
-    const NOT_HAVE_MIN_CHAR = { message: 'O "name" deve ter pelo menos 3 caracteres' };
-    const HTTP_BAD_REQUEST_STATUS = 400;
-    
     const { name } = req.body;
 
     if (!name) {
