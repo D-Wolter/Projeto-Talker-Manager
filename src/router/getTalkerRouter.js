@@ -5,9 +5,9 @@ const fsReadDB = require('../middlewares/fsRead');
 const dataJsonPath = path.resolve(__dirname, '../talker.json');
 const HTTP_OK_STATUS = 200;
 
-const allTalkersRouter = Router();
+const getTalkerRouter = Router();
 
-allTalkersRouter.get('/', async (_req, res) => {
+getTalkerRouter.get('/', async (_req, res) => {
     const talkers = await fsReadDB(dataJsonPath);
   
     if (!talkers) {
@@ -18,5 +18,5 @@ allTalkersRouter.get('/', async (_req, res) => {
   });
 
 module.exports = {
-  allTalkersRouter,
+  getTalkerRouter,
 };

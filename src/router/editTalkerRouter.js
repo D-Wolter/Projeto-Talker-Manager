@@ -10,8 +10,9 @@ const fsReadDB = require('../middlewares/fsRead');
 
 const editTalkerRouter = Router();
 const JSON_PATH = join(__dirname, '../talker.json');
-const NOT_FOUND = { message: 'Pessoa palestrante não encontrada' };
+const NOT_FOUND_MSG = { message: 'Pessoa palestrante não encontrada' };
 const HTTP_OK_STATUS = 200;
+const HTTP_NOT_FOUND_STATUS = 404;
 
 editTalkerRouter.put('/:id', 
 verifyToken, verifyAge, verifyName, verifyTalk, 
@@ -22,7 +23,7 @@ async (req, res) => {
   const findTalkerId = talker.find(({ id }) => id === Number(reqID));
   
   if (findTalkerId === undefined) {
-    return res.status(404).json(NOT_FOUND);
+    return res.status(HTTP_NOT_FOUND_STATUS).json(NOT_FOUND_MSG);
   }
   const talkerId = findTalkerId.id;
   console.log(talkerId);

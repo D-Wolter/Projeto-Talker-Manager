@@ -1,6 +1,6 @@
 const express = require('express');
-const { allTalkersRouter } = require('./router/allTalkersRouter');
-const { byIdTalkerRouter } = require('./router/byIdTalkerRouter');
+const { getTalkerRouter } = require('./router/getTalkerRouter');
+const { getByIdTalkerRouter } = require('./router/getByIdTalkerRouter');
 const { editTalkerRouter } = require('./router/editTalkerRouter');
 const { loginTalkerRouter } = require('./router/loginTalkerRouter');
 const { newTalkerRouter } = require('./router/newTalkerRouter');
@@ -16,8 +16,8 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-app.use('/talker', allTalkersRouter);
-app.use('/talker', byIdTalkerRouter);
+app.use('/talker', getTalkerRouter);
+app.use('/talker', getByIdTalkerRouter);
 app.use('/login', loginTalkerRouter);
 app.use('/talker', newTalkerRouter);
 app.use('/talker', editTalkerRouter);
