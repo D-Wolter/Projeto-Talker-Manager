@@ -11,6 +11,7 @@ const fsReadDB = require('../middlewares/fsRead');
 const editTalkerRouter = Router();
 const JSON_PATH = join(__dirname, '../talker.json');
 const NOT_FOUND = { message: 'Pessoa palestrante não encontrada' };
+const HTTP_OK_STATUS = 200;
 
 editTalkerRouter.put('/:id', 
 verifyToken, verifyAge, verifyName, verifyTalk, 
@@ -30,7 +31,7 @@ async (req, res) => {
   
   await editTalker(talkerId, createnew);
 
-  res.status(200).json(createnew);
+  res.status(HTTP_OK_STATUS).json(createnew);
 });
 
 module.exports = {

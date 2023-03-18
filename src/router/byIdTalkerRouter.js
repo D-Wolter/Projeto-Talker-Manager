@@ -3,6 +3,7 @@ const path = require('path');
 const fsReadDB = require('../middlewares/fsRead');
 
 const dataJsonPath = path.resolve(__dirname, '../talker.json');
+const HTTP_OK_STATUS = 200;
 
 const byIdTalkerRouter = Router();
 
@@ -15,7 +16,7 @@ byIdTalkerRouter.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'Pessoa palestrante não encontrada' }); 
     } 
   
-    return res.status(200).json(talkerId);
+    return res.status(HTTP_OK_STATUS).json(talkerId);
   });
 
 module.exports = {
