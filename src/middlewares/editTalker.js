@@ -1,11 +1,8 @@
-const { join } = require('path');
-const fsReadDB = require('./fsRead');
 const { writeFile } = require('../utils/writeFile');
-
-const JSON_PATH = join(__dirname, '../talker.json');
+const { readFile } = require('../utils/readFile');
 
 const editTalker = async (id, talker) => {
-  const talkers = await fsReadDB(JSON_PATH);
+  const talkers = await readFile();
 
   const index = talkers.findIndex((t) => t.id === +id);
   talkers[index] = talker;

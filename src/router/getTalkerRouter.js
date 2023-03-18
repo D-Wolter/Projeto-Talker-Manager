@@ -1,14 +1,12 @@
 const { Router } = require('express');
-const path = require('path');
-const fsReadDB = require('../middlewares/fsRead');
+const { readFile } = require('../utils/readFile');
 
-const dataJsonPath = path.resolve(__dirname, '../talker.json');
 const HTTP_OK_STATUS = 200;
 
 const getTalkerRouter = Router();
 
 getTalkerRouter.get('/', async (_req, res) => {
-    const talkers = await fsReadDB(dataJsonPath);
+    const talkers = await readFile();
   
     if (!talkers) {
       return res.status(HTTP_OK_STATUS).json([]);

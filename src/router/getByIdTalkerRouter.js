@@ -1,8 +1,6 @@
 const { Router } = require('express');
-const path = require('path');
-const fsReadDB = require('../middlewares/fsRead');
+const { readFile } = require('../utils/readFile');
 
-const dataJsonPath = path.resolve(__dirname, '../talker.json');
 const HTTP_OK_STATUS = 200;
 const HTTP_NOT_FOUND_STATUS = 404;
 const NOT_FOUND_MSG = { message: 'Pessoa palestrante não encontrada' };
@@ -11,7 +9,7 @@ const getByIdTalkerRouter = Router();
 
 getByIdTalkerRouter.get('/:id', async (req, res) => {
     const { id } = req.params;
-    const talkers = await fsReadDB(dataJsonPath);
+    const talkers = await readFile();
     const talkerId = talkers.find((talker) => talker.id === +id);
   
     if (!talkerId) {
