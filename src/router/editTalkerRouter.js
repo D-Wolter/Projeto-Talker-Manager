@@ -4,7 +4,7 @@ const { verifyAge } = require('../middlewares/verifyAge');
 const { verifyName } = require('../middlewares/verifyName');
 const { verifyTalk } = require('../middlewares/verifyTalk');
 const { verifyRate } = require('../middlewares/verifyRate');
-const { editTalker } = require('../middlewares/editTalker');
+const { editTalker } = require('../utils/editTalker');
 const { readFile } = require('../utils/readFile');
 
 const editTalkerRouter = Router();

@@ -1,5 +1,5 @@
-const { writeFile } = require('../utils/writeFile');
-const { readFile } = require('../utils/readFile');
+const { writeFile } = require('./writeFile');
+const { readFile } = require('./readFile');
 
 const editTalker = async (id, talker) => {
   const talkers = await readFile();

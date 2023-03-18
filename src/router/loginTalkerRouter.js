@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const checkLoginValid = require('../middlewares/checkLoginValid');
-const generateToken = require('../middlewares/cryptoTokenGenerate');
+const generateToken = require('../utils/cryptoTokenGenerate');
 
 const loginTalkerRouter = Router();
 const HTTP_OK_STATUS = 200;

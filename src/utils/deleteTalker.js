@@ -1,5 +1,5 @@
-const { readFile } = require('../utils/readFile');
-const { writeFile } = require('../utils/writeFile');
+const { readFile } = require('./readFile');
+const { writeFile } = require('./writeFile');
 
 const deleteTalker = async (id) => {
     const talkers = await readFile();

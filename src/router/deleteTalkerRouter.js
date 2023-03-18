@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { deleteTalker } = require('../middlewares/deleteTalker');
+const { deleteTalker } = require('../utils/deleteTalker');
 const { verifyToken } = require('../middlewares/verifyToken');
 
 const HTTP_NO_CONTENT_STATUS = 204;

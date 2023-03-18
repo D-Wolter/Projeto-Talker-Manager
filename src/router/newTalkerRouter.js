@@ -4,7 +4,7 @@ const { verifyAge } = require('../middlewares/verifyAge');
 const { verifyName } = require('../middlewares/verifyName');
 const { verifyTalk } = require('../middlewares/verifyTalk');
 const { verifyRate } = require('../middlewares/verifyRate');
-const { createNewTalker } = require('../middlewares/createNewTalker');
+const { createNewTalker } = require('../utils/createNewTalker');
 
 const newTalkerRouter = Router();
 const HTTP_CREATED_STATUS = 201;
