@@ -21,7 +21,6 @@ app.use('/talker', router.newTalkerRouter);
 app.use('/talker', router.editTalkerRouter);
 app.use('/talker', router.deleteTalkerRouter);
 app.use('/talker/rate', router.editRateByIdRouter);
-app.use('/talker/db', router.getAllTalkerDbRouter);
 
 app.listen(PORT, () => {
   console.log('Online');
