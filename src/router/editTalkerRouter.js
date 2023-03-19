@@ -22,7 +22,6 @@ async (req, res) => {
     return res.status(HTTP_NOT_FOUND_STATUS).json(NOT_FOUND_MSG);
   }
   const talkerId = findTalkerId.id;
-  console.log(talkerId);
   const { name, age, talk } = req.body;
   const createnew = { name, age, id: talkerId, talk };
   

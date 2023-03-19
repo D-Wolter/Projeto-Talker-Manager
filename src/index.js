@@ -12,6 +12,7 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
+app.use('/talker/db', router.getAllTalkerDbRouter);
 app.use('/talker/search', router.searchTalkerRouter);
 app.use('/talker', router.getTalkerRouter);
 app.use('/talker', router.getByIdTalkerRouter);
@@ -20,6 +21,7 @@ app.use('/talker', router.newTalkerRouter);
 app.use('/talker', router.editTalkerRouter);
 app.use('/talker', router.deleteTalkerRouter);
 app.use('/talker/rate', router.editRateByIdRouter);
+app.use('/talker/db', router.getAllTalkerDbRouter);
 
 app.listen(PORT, () => {
   console.log('Online');
