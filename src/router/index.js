@@ -5,6 +5,7 @@ const { getTalkerRouter } = require('./getTalkerRouter');
 const { loginTalkerRouter } = require('./loginTalkerRouter');
 const { newTalkerRouter } = require('./newTalkerRouter');
 const { searchTalkerRouter } = require('./searchTalkerRouter');
+const { editRateByIdRouter } = require('./editRateByIdRouter');
 
 module.exports = {
     deleteTalkerRouter,
@@ -14,4 +15,5 @@ module.exports = {
     loginTalkerRouter,
     newTalkerRouter,
     searchTalkerRouter,
+    editRateByIdRouter,
 };

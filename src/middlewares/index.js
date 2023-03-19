@@ -5,6 +5,7 @@ const { verifyRate } = require('./verifyRate');
 const { verifyRateForSearch } = require('./verifyRateForSearch');
 const { verifyTalk } = require('./verifyTalk');
 const { verifyToken } = require('./verifyToken');
+const { verifyRateForEdit } = require('./verifyRateForEdit');
 
 module.exports = {
     checkLoginValid,
@@ -14,4 +15,5 @@ module.exports = {
     verifyRateForSearch,
     verifyTalk,
     verifyToken,
+    verifyRateForEdit,
 };
