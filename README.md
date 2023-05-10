@@ -8,9 +8,6 @@ Esta API fornece uma solução moderna e avançada para o gerenciamento de infor
 Com esta API, é possível facilmente realizar operações de pesquisar, cadastrar, editar e excluir pessoas cadastradas, garantindo assim a organização e segurança dos dados. O armazenamento dos dados é feito através do uso do módulo fs, que escreve em um arquivo Json, proporcionando uma implementação simples e rápida para a necessidade. Além disso, é possível acessar a documentação construída no swagger disponível na rota "/doc" para uma melhor compreensão e utilização da API.
 
 
-Os endpoints da API foram documentados com swagger que pode ser acessado abaixo:
-
-[API Swagger.](https://talker-manager-production.up.railway.app/doc/)
 
 # Tecnologias usadas
 
